@@ -1,0 +1,15 @@
+<label for="password">Your Password</label>
+<input type="password" id="password" (input)="onInput($event)" />
+
+<p *ngIf="userTextLength; else noText">
+  Your password: <span class="bordered">{{ userText }}</span>
+</p>
+<p *ngIf="textInputed && userTextLength">
+  Your password length: {{ userTextLength }}
+</p>
+
+<ng-template #noText>
+  <small>Type your password!</small>
+</ng-template>
+
+<section [ngStyle]="{ backgroundColor: color }"></section>
